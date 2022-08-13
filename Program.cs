@@ -1,4 +1,4 @@
-﻿//Calculadora de INSS E IRRF 2022 Versão 1.1
+﻿//Calculadora de INSS E IRRF 2022 Versão 1.2
 // Aprimoramentos para a próxima versão:
 // Tornar uma calcuradora única, já com o INSS integrado ao IRRF
 // Teste de Git
