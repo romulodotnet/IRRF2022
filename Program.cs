@@ -1,4 +1,4 @@
-﻿//Calculadora de INSS E IRRF 2022 Versão 1.3
+﻿//Calculadora de INSS E IRRF 2022 Versão 1.0
 // Aprimoramentos para a próxima versão:
 // Criar uma API.
 
@@ -8,14 +8,13 @@ class Programa
     static void Main(string[] args)
 
     {
-        // Menu para acessar as Calculadoras
         Console.WriteLine("Bem vindo a Calculadora do IRRF 2022");
         Console.WriteLine("Salário Bruto (Mensal).");
-        //Já que não tem validação de entrada de dados, usei um exemplo para evitar erros.
         Console.WriteLine("Exemplo: 2200,00");
         double salario, inss;
         salario = double.Parse(Console.ReadLine());
         inss = 0;
+
         //Condicionais Cálculo de INSS para cada faixa de renda.        
         if (salario <= 1212.00)
         {
@@ -66,14 +65,13 @@ class Programa
         Console.WriteLine("Base de Cálculo: R$ " + "{0:F2}", baseDeCalculo);
 
 
-        //Variáveis dos cálculos de alíquota por faixa salárial de IR              
-
+        //Variáveis dos cálculos de alíquota por faixa salárial de IR
         imposto7 = ((baseDeCalculo * 0.075) - 142.80);
         imposto15 = ((baseDeCalculo * 0.15) - 354.80);
         imposto22 = ((baseDeCalculo * 0.2250) - 636.13);
         imposto27 = ((baseDeCalculo * 0.2750) - 869.36);
 
-        //Condicionais para cada faixa salárial, imprimindo duas casas decimas após a vírgula.
+        //Condicionais para cada faixa salárial
         if (baseDeCalculo > 1903.98 && baseDeCalculo <= 2826.65)
             Console.WriteLine("Alíquota de: 7.5%\r\nImposto IR: R$ " + "{0:F2}", imposto7);
         else
@@ -86,9 +84,10 @@ class Programa
         else
           if (baseDeCalculo >= 4664.69)
             Console.WriteLine("Alíquota de: 27,50%\r\nImposto IR: R$ " + "{0:F2}", imposto27);
-        //Se a faixa salárial não se encaixar em nenhuma condicional, retorna insenção de impostos.
+
         else
             Console.WriteLine("Sua faixa salárial é isenta de impostos.");
+        Console.Read();
 
     }
 
